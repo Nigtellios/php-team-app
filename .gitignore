@@ -1,0 +1,7 @@
+# Configuration and environment files:
+.env
+config/config.php
+.idea
+
+# Database
+data!/config/config.php
