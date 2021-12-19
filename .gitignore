@@ -3,6 +3,7 @@
 config/config.php
 .idea
 node_modules
+.cache
 
 # Database
 data!/config/config.php
