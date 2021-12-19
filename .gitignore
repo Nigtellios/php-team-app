@@ -2,6 +2,7 @@
 .env
 config/config.php
 .idea
+node_modules
 
 # Database
 data!/config/config.php

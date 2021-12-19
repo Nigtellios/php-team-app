@@ -27,7 +27,7 @@
 			trigger_error( 'Deserializing is not allowed.', E_USER_ERROR );
 		}
 
-		private function __construct() {
+		public function __construct() {
 			parent::__construct( $this->database_host, $this->user_name, $this->user_password, $this->database_name);
 
 			if ( mysqli_connect_error() ) {
