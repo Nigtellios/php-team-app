@@ -1,9 +1,4 @@
-# Configuration and environment files:
-.env
-config/config.php
+vendor/
+logs/app.log
+nbproject/
 .idea
-node_modules
-.cache
-
-# Database
-data!/config/config.php
