@@ -23,7 +23,7 @@ echo "Hello, {$worlders}" . $break;
 /* ######################################## */
 /* ######################################## */
 
-/* #4: PHP and HTML: Parse key:value pairs. */
+/* #4: PHP and HTML: Parse key:value pairs. url/?key=value */
 
 /* Create a superglobal which is an ARRAY: */
 $name = $_GET['name'];
@@ -33,7 +33,7 @@ echo "Hello there $name!";
 
 /* There is also something like <?php shortcut, which is <?=, but it's rarely useful. */
 
-/* To disallow users to do something like HTML injection, use htmlspecialchars() function. */
+/* To disallow users to do something like HTML injection, use htmlspecialchars() function. This is also called "sanitizing an input". */
 $new_name = htmlspecialchars( $_GET['new_name'] );
 echo "Hello there $new_name, it's first time we see you!";
 
