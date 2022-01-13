@@ -120,3 +120,8 @@ die();
 /* If we want to delete some item from an array, we can use unset() function. */
 unset($cars['Bugatti']);
 
+/* ######################################## */
+/* ######################################## */
+/* ######################################## */
+
+/* https://laracasts.com/series/php-for-beginners/episodes/8 */
