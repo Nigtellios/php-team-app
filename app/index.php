@@ -41,4 +41,10 @@ function printDetailedCars($arr) {
 	echo $result;
 }
 
+function dumper( $param ) {
+	die( var_dump( $param ) );
+}
+
+$some_var = 'Ok?';
+
 require 'index.view.php';

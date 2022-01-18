@@ -9,6 +9,7 @@
     echo $welcome_message;
     printCars($cars);
     printDetailedCars($detailed_cars);
+    //dumper([$some_var]);
     ?>
 </body>
 </html>

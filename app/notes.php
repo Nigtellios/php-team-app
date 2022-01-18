@@ -68,11 +68,10 @@ foreach ( $cars as $car ) {
 }
 
 /* We're telling that for each one of these ($cars) do something. We can also use other version (divided one), which ends with :*/
-foreach ( $cars as $car ) : ?>
-	<span>
-		<?php echo "$car"; ?>
-	</span>
-<?php
+foreach ( $cars as $car ) :
+	echo '<span>';
+	echo "$car";
+	echo '</span>';
 endforeach;
 
 /* This one above is very useful inside markup files. */
@@ -124,4 +123,63 @@ unset($cars['Bugatti']);
 /* ######################################## */
 /* ######################################## */
 
-/* https://laracasts.com/series/php-for-beginners/episodes/8 */
+/* #8: Booleans */
+/* Boolean is a value that can present value true/false. xD */
+
+$bool = [
+    'title'   => 'Some Boolean',
+    'is_done' => true
+];
+
+/* Wherever want, you can simply echo values of specified keys with $array['key']. */
+/* There is also ternary operator, which is very useful nowadays. */
+
+$bool['is_done'] ? "Yes" : "No!";
+
+/* Basically with the thing above, we say: if is_done is true, then response would be Yes, if is false: No. */
+
+/* To negate the value, we can use ! mark. ! in shortcut means: if is not. */
+
+!$bool['is_done'] ? "No" : "Yes!";
+
+/* This above literally means „If is_done isn't true say No, if is true say Yes. */
+/* To present some data with first-letter uppercase, there is function called "ucwords()". */
+
+/* ######################################## */
+/* ######################################## */
+/* ######################################## */
+
+/* #9: Conditionals */
+/* Conditionals are keywords that extends logic, if some value is true, then do something. These keywords are: if, else, elseif. They can be also presented by divided versions of them. */
+
+$some_var = 1;
+
+if ( 1 === $some_var ) {
+    echo "1 is equal to some_var";
+} else {
+    echo "1 isn't equal to some_var";
+}
+
+/* And Divided version: */
+
+if ( 1 === $some_var ) :
+    echo "Yes";
+elseif ( 2 === $some_var ) :
+    echo "No";
+else :
+    echo "Check once again!";
+endif;
+
+/* ######################################## */
+/* ######################################## */
+/* ######################################## */
+
+/* #10: Functions */
+
+/* Functions can take a parameters and do something with them, or just return some value without taking parameters. They are some kind of "functional code blocks" that does what we tell them to. Let's say we want to create function that dumps something to us. */
+
+function dumper( $param ) {
+    die( var_dump( $param ) );
+}
+
+/* In the function above we takes $params Array with initial value of empty []. (If we declare some value in the same place when we declare parameters, it will become its default value.) Then we're iterating through every parameter of the array and var_dumps it outside. */
