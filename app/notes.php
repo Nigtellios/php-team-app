@@ -183,3 +183,12 @@ function dumper( $param ) {
 }
 
 /* In the function above we takes $params Array with initial value of empty []. (If we declare some value in the same place when we declare parameters, it will become its default value.) Then we're iterating through every parameter of the array and var_dumps it outside. */
+
+/* ######################################## */
+/* ######################################## */
+/* ######################################## */
+
+/* #11: MySQL 101 */
+
+/* Each SQL query has to end with ; (semicolon), this includes CLI too. */
+/* Some logged commands: show databases; use database; show tables; */
