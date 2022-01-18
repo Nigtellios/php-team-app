@@ -191,4 +191,7 @@ function dumper( $param ) {
 /* #11: MySQL 101 */
 
 /* Each SQL query has to end with ; (semicolon), this includes CLI too. */
-/* Some logged commands: show databases; use database; show tables; */
+/* Some logged commands: show databases; use database; show tables; describe tablename; select * from tablename; */
+
+/* PRIMARY KEY is the unique identifier of a column row. */
+/* AUTO_INCREMENT means automatically increases a value by 1 with each row. */
