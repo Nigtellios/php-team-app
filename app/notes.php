@@ -195,3 +195,9 @@ function dumper( $param ) {
 
 /* PRIMARY KEY is the unique identifier of a column row. */
 /* AUTO_INCREMENT means automatically increases a value by 1 with each row. */
+
+/* ######################################## */
+/* ######################################## */
+/* ######################################## */
+
+/* #12: Classes 101 https://laracasts.com/series/php-for-beginners/episodes/12 */
