@@ -243,4 +243,4 @@ $point = new Pointer2('Hello World');
 
 /* #13: Intro to PDO */
 
-/* PDO Means PHP Data Objects. We can use it to connect to the database. */
+/* PDO Means PHP Data Objects. We can use it to connect to the database.https://laracasts.com/series/php-for-beginners/episodes/13 */
