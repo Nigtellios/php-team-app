@@ -34,7 +34,7 @@ echo "Hello there $name!";
 /* There is also something like <?php shortcut, which is <?=, but it's rarely useful. */
 
 /* To disallow users to do something like HTML injection, use htmlspecialchars() function. This is also called "sanitizing an input". */
-$new_name = htmlspecialchars( $_GET['new_name'] );
+$new_name = htmlspecialchars($_GET['new_name']);
 echo "Hello there $new_name, it's first time we see you!";
 
 /* ######################################## */
@@ -57,21 +57,21 @@ require 'index.view.php'; */
 
 /* Array is primitive representation of related things. */
 $cars = [
-	'Bugatti',
-	'Porsche',
-	'Ferrari'
+    'Bugatti',
+    'Porsche',
+    'Ferrari'
 ];
 
 /* Now we can iterate through that array, which is very useful in programming. */
-foreach ( $cars as $car ) {
-	echo $car;
+foreach ($cars as $car) {
+    echo $car;
 }
 
 /* We're telling that for each one of these ($cars) do something. We can also use other version (divided one), which ends with :*/
-foreach ( $cars as $car ) :
-	echo '<span>';
-	echo "$car";
-	echo '</span>';
+foreach ($cars as $car) :
+    echo '<span>';
+    echo "$car";
+    echo '</span>';
 endforeach;
 
 /* This one above is very useful inside markup files. */
@@ -84,21 +84,22 @@ endforeach;
 /* In associative array we assign a key to each value in the array. */
 
 $detailed_cars = [
-	'manufacturer' => 'Bugatti',
-	'model'        => 'Veyron',
-	'produced'     => '2011'
+    'manufacturer' => 'Bugatti',
+    'model'        => 'Veyron',
+    'produced'     => '2011'
 ];
 
 /* We're assigning values to key with => sign (equals = and greater than >). */
 /* To print associative array we have to assign key to a value with: */
-function printDetailedCars($arr) {
-	$result = "<ul>";
+function printDetailedCars($arr)
+{
+    $result = "<ul>";
 
-	foreach ( $arr as $detail => $value ) {
-		$result .= "<li><strong>$detail</strong>: $value </li>";
-	}
+    foreach ($arr as $detail => $value) {
+        $result .= "<li><strong>$detail</strong>: $value </li>";
+    }
 
-	echo $result;
+    echo $result;
 }
 
 /* To push new item to the array, we can simply do: */
@@ -154,7 +155,7 @@ $bool['is_done'] ? "Yes" : "No!";
 
 $some_var = 1;
 
-if ( 1 === $some_var ) {
+if (1 === $some_var) {
     echo "1 is equal to some_var";
 } else {
     echo "1 isn't equal to some_var";
@@ -162,9 +163,9 @@ if ( 1 === $some_var ) {
 
 /* And Divided version: */
 
-if ( 1 === $some_var ) :
+if (1 === $some_var) :
     echo "Yes";
-elseif ( 2 === $some_var ) :
+elseif (2 === $some_var) :
     echo "No";
 else :
     echo "Check once again!";
@@ -178,8 +179,9 @@ endif;
 
 /* Functions can take a parameters and do something with them, or just return some value without taking parameters. They are some kind of "functional code blocks" that does what we tell them to. Let's say we want to create function that dumps something to us. */
 
-function dumper( $param ) {
-    die( var_dump( $param ) );
+function dumper($param)
+{
+    die(var_dump($param));
 }
 
 /* In the function above we takes $params Array with initial value of empty []. (If we declare some value in the same place when we declare parameters, it will become its default value.) Then we're iterating through every parameter of the array and var_dumps it outside. */
@@ -200,4 +202,30 @@ function dumper( $param ) {
 /* ######################################## */
 /* ######################################## */
 
-/* #12: Classes 101 https://laracasts.com/series/php-for-beginners/episodes/12 */
+/* #12: Classes 101 */
+
+/* Class can represent any possible thing in any project. We're usually using nouns to define them. We're defining classes like that: */
+
+class Pointer1
+{
+    public function __construct()
+    {
+    }
+}
+
+/* Inside Classes we can define function scopes. Protected ones can be used only inside Class Scope, while Public ones can be used everywhere upon called. Construct is method which will be called whenever you will create a new instance of Pointer. Every new class call is called "instance" (new ClassName). */
+
+class Pointer2
+{
+    public function __construct($params)
+    {
+        $this->params = $params;
+        // We're setting up our constructor properties, every parameter has to be declared that way.
+        // Arrow "->" means we're referring to the current instance of a class, with arrow we're assigning a property to this object (current class instance).
+        // Each instance of a class is an "object".
+    }
+}
+
+$point = new Pointer2('Hello World');
+
+/* If we want to pass some params to the class, we have to define them in our constructor. */
