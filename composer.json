@@ -7,14 +7,7 @@
         }
     ],
     "require": {
-        "slim/slim": "*",
-        "illuminate/database": "^5.6",
-        "monolog/monolog": "^1.23",
-        "awurth/slim-validation": "^3.0",
-        "illuminate/events": "^5.6",
-        "robmorgan/phinx": "^0.9.2",
-        "tuupola/slim-jwt-auth": "^3.0",
-        "firebase/php-jwt": "^5.0"
+        "squizlabs/php_codesniffer": "*"
     },
     "autoload": {
         "psr-4": {
