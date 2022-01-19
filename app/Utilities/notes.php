@@ -217,8 +217,8 @@ class Pointer1
 
 class Pointer2
 {
-	public $publicParam;
-	protected $someParam;
+    public $publicParam;
+    protected $someParam;
 
     public function __construct($params)
     {
@@ -243,4 +243,17 @@ $point = new Pointer2('Hello World');
 
 /* #13: Intro to PDO */
 
-/* PDO Means PHP Data Objects. We can use it to connect to the database.https://laracasts.com/series/php-for-beginners/episodes/13 */
+/* PDO Means PHP Data Objects. We can use it to connect to the database. To connect to the Database we can use new instance of pdo. */
+
+$local_connection = new PDO('mysql:host=127.0.0.1;dbname=php_team_app', 'root', '');
+
+/* In PHP to handle our requests we can use keywords try and catch, just like that: */
+
+try {
+	$local_connection = new PDO('mysql:host=127.0.0.1;dbname=php_team_app', 'root', '');
+} catch (PDOException $event) {
+    $something = "Not Working";
+}
+
+/* In that way we can tell the user if database connection works. After init our connection, we can prepare some querries to be done. */
+
