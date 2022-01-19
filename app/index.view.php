@@ -10,6 +10,8 @@
     printCars($cars);
     printDetailedCars($detailed_cars);
     //dumper([$some_var]);
+
+    var_dump($user1);
     ?>
 </body>
 </html>

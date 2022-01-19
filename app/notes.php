@@ -217,6 +217,9 @@ class Pointer1
 
 class Pointer2
 {
+	public $publicParam;
+	protected $someParam;
+
     public function __construct($params)
     {
         $this->params = $params;
@@ -228,4 +231,9 @@ class Pointer2
 
 $point = new Pointer2('Hello World');
 
-/* If we want to pass some params to the class, we have to define them in our constructor. */
+/* If we want to pass some params to the class, we have to define them in our constructor. We can't access property someParam like $something->someParam, because it's scoped only inside Class - that means we can't access it globally. On the other hand - we can access the public one, $publicParam. */
+
+/* If we want to import class beside our namespace, use require or require_once('path/to/class/Class.php'); */
+
+/* The class itself is something like blueprint, but it can be composed from different values. */
+
