@@ -237,3 +237,10 @@ $point = new Pointer2('Hello World');
 
 /* The class itself is something like blueprint, but it can be composed from different values. */
 
+/* ######################################## */
+/* ######################################## */
+/* ######################################## */
+
+/* #13: Intro to PDO */
+
+/* PDO Means PHP Data Objects. We can use it to connect to the database. */
