@@ -284,7 +284,7 @@ $users = $get_users->fetchAll(PDO::FETCH_CLASS, 'User');
 /* ######################################## */
 /* ######################################## */
 
-/* #14: PDO Refactoring https://laracasts.com/series/php-for-beginners/episodes/14 */
+/* #14: PDO Refactoring */
 
 class Db
 {
@@ -310,3 +310,9 @@ class Db
 /* Without namespaces, we can require Class file from another location and freerly use their methods. */
 
 /* Remember about function array_map() to list out interesting things. */
+
+/* ######################################## */
+/* ######################################## */
+/* ######################################## */
+
+/* #15: Hide Your Secret Passwords https://laracasts.com/series/php-for-beginners/episodes/15 */
