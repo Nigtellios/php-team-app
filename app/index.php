@@ -1,18 +1,18 @@
 <?php
-//Import Classes
-require_once('Controllers/User.php');
-require_once('Utilities/functions.php');
+// Import Classes
+require 'Controllers/Connection.php';
+require 'Controllers/User.php';
 
-// MYSQL Connection Handlers
-try {
-    $local_connection = new PDO('mysql:host=127.0.0.1;dbname=php_team_app', 'root', '');
-} catch (PDOException $event) {
-    die("Connection can't be established. Please check the properties.");
-}
+// Import Utilities
+require 'Utilities/functions.php';
+
+// Database Preparation
+$init = Connection::connect();
 
 // Queries Preparation
-$get_users = $local_connection->prepare('SELECT * FROM pta_user');
+$get_users = $init->prepare('SELECT * FROM pta_user');
 $get_users->execute();
-$users = $get_users->fetchAll(PDO::FETCH_CLASS, 'User');
+$users = $get_users->fetchAll(PDO::FETCH_CLASS);
 
+// Views
 require 'index.view.php';

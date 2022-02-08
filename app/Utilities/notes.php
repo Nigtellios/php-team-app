@@ -250,7 +250,7 @@ $local_connection = new PDO('mysql:host=127.0.0.1;dbname=php_team_app', 'root', 
 /* In PHP to handle our requests we can use keywords try and catch, just like that: */
 
 try {
-	$local_connection = new PDO('mysql:host=127.0.0.1;dbname=php_team_app', 'root', '');
+    $local_connection = new PDO('mysql:host=127.0.0.1;dbname=php_team_app', 'root', '');
 } catch (PDOException $event) {
     $something = "Not Working";
 }
@@ -272,11 +272,39 @@ var_dump($get_users->fetchAll(PDO::FETCH_OBJ));
 /* Now we can list down all our contents from selected query. All we have to do is assign this execution (with fetch all) to a variable, and then loop through them. */
 
 foreach ($users as $info => $user) :
-	echo $info;
-	echo $user->name;
+    echo $info;
+    echo $user->name;
 endforeach;
 
 /* We can also fetch our data through the CLASS. */
 
 $users = $get_users->fetchAll(PDO::FETCH_CLASS, 'User');
 
+/* ######################################## */
+/* ######################################## */
+/* ######################################## */
+
+/* #14: PDO Refactoring https://laracasts.com/series/php-for-beginners/episodes/14 */
+
+class Db
+{
+	// New keyword here -> static
+    public static function connect()
+    {
+        // This means that we can use this method globally without requiring an instance!
+    }
+}
+
+/* Then, we don't need to do things such as: */
+
+/* $db = new Db();
+	$db->connect();
+ */
+
+/* Instead of this we can do
+	Db::connect();
+*/
+
+/* Static methods are useful when you don't need to create an instance. */
+
+/* Without namespaces, we can require Class file from another location and freerly use their methods. */
