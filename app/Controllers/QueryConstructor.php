@@ -17,6 +17,8 @@ class QueryConstructor
 
     /**
      * @param $db_table
+     *
+     * @return array|false
      */
     public function selectAll($db_table)
     {

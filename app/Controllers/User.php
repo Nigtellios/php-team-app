@@ -3,6 +3,13 @@
 class User
 {
     // Automatically Triggered on Instantiation
+    /**
+     * @param $id
+     * @param $name
+     * @param $tag
+     * @param $reputation
+     * @param $status
+     */
     public function __construct($id, $name, $tag, $reputation, $status)
     {
         $this->id = $id;
@@ -17,6 +24,9 @@ class User
         $this->status = 'Fired';
     }
 
+    /**
+     * @return mixed
+     */
     public function showStatus()
     {
         return $this->status;

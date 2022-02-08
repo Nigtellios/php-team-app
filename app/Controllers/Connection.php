@@ -2,6 +2,9 @@
 
 class Connection
 {
+    /**
+     * @return PDO|void
+     */
     public static function connect()
     {
         try {
