@@ -2,17 +2,17 @@
 // Import Classes
 require 'Controllers/Connection.php';
 require 'Controllers/User.php';
+require 'Controllers/QueryConstructor.php';
 
 // Import Utilities
 require 'Utilities/functions.php';
 
 // Database Preparation
-$init = Connection::connect();
+$db_init = Connection::connect();
 
-// Queries Preparation
-$get_users = $init->prepare('SELECT * FROM pta_user');
-$get_users->execute();
-$users = $get_users->fetchAll(PDO::FETCH_CLASS);
+// Queries
+$constructor = new QueryConstructor($db_init);
+$users = $constructor->selectAll('pta_user');
 
 // Views
 require 'index.view.php';
