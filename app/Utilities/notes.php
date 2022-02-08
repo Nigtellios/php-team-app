@@ -308,3 +308,5 @@ class Db
 /* Static methods are useful when you don't need to create an instance. */
 
 /* Without namespaces, we can require Class file from another location and freerly use their methods. */
+
+/* Remember about function array_map() to list out interesting things. */
