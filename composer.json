@@ -8,7 +8,8 @@
     ],
     "require": {
         "squizlabs/php_codesniffer": "*",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "ext-sockets": "*"
     },
     "autoload": {
         "psr-4": {
