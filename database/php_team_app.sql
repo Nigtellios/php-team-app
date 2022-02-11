@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 18, 2022 at 08:48 PM
+-- Generation Time: Jan 19, 2022 at 09:14 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -35,6 +35,13 @@ CREATE TABLE `pta_teams` (
   `available_space` int(99) DEFAULT NULL COMMENT 'Members count.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Dumping data for table `pta_teams`
+--
+
+INSERT INTO `pta_teams` (`id`, `slug`, `name`, `description`, `available_space`) VALUES
+(1, 'pl4', 'P_L_4', 'Klan P_L_4. Polskie Siły Zbrojne.', 50);
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +55,17 @@ CREATE TABLE `pta_user` (
   `reputation` int(255) NOT NULL COMMENT 'Reputation points.',
   `status` char(99) COLLATE utf8_bin NOT NULL COMMENT 'Status of user, ie: „Clan member".'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `pta_user`
+--
+
+INSERT INTO `pta_user` (`id`, `name`, `tag`, `reputation`, `status`) VALUES
+(1, 'Nigtellios', 2137, 99, 'Aktywny'),
+(2, 'polo0703', 1363, 99, 'Aktywny'),
+(3, 'kadwen_kiler', 8321, 99, 'Aktywny'),
+(4, 'Stalowa_sciana', 1081, 99, 'Aktywny'),
+(5, 'stachulec_najlepszy', 8519, 99, 'Aktywny');
 
 --
 -- Indexes for dumped tables
@@ -74,13 +92,13 @@ ALTER TABLE `pta_user`
 -- AUTO_INCREMENT for table `pta_teams`
 --
 ALTER TABLE `pta_teams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pta_user`
 --
 ALTER TABLE `pta_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

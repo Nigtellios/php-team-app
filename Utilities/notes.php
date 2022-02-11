@@ -217,6 +217,9 @@ class Pointer1
 
 class Pointer2
 {
+    public $publicParam;
+    protected $someParam;
+
     public function __construct($params)
     {
         $this->params = $params;
@@ -228,4 +231,88 @@ class Pointer2
 
 $point = new Pointer2('Hello World');
 
-/* If we want to pass some params to the class, we have to define them in our constructor. */
+/* If we want to pass some params to the class, we have to define them in our constructor. We can't access property someParam like $something->someParam, because it's scoped only inside Class - that means we can't access it globally. On the other hand - we can access the public one, $publicParam. */
+
+/* If we want to import class beside our namespace, use require or require_once('path/to/class/Class.php'); */
+
+/* The class itself is something like blueprint, but it can be composed from different values. */
+
+/* ######################################## */
+/* ######################################## */
+/* ######################################## */
+
+/* #13: Intro to PDO */
+
+/* PDO Means PHP Data Objects. We can use it to connect to the database. To connect to the Database we can use new instance of pdo. */
+
+$local_connection = new PDO('mysql:host=127.0.0.1;dbname=php_team_app', 'root', '');
+
+/* In PHP to handle our requests we can use keywords try and catch, just like that: */
+
+try {
+    $local_connection = new PDO('mysql:host=127.0.0.1;dbname=php_team_app', 'root', '');
+} catch (PDOException $event) {
+    $something = "Not Working";
+}
+
+/* In that way we can tell the user if database connection works. After init our connection, we can prepare some querries to be done. */
+
+$get_users = $local_connection->prepare('SELECT * FROM pta_user');
+
+/* After doing preparation, we have to execute our statement. */
+
+$get_users->execute();
+
+/* Now if we want to check if it's working, we have to use fetchAll() method from PDO. If we want to change a way in which data is being fetch, we can pass additional parameter which is PDO::FETCH_OBJ, that means we're fetching all things from query to the memory. */
+
+var_dump($get_users->fetchAll(PDO::FETCH_OBJ));
+
+/* To fetch only selected data, we can use fetch() instead of fetchAll(). */
+
+/* Now we can list down all our contents from selected query. All we have to do is assign this execution (with fetch all) to a variable, and then loop through them. */
+
+foreach ($users as $info => $user) :
+    echo $info;
+    echo $user->name;
+endforeach;
+
+/* We can also fetch our data through the CLASS. */
+
+$users = $get_users->fetchAll(PDO::FETCH_CLASS, 'User');
+
+/* ######################################## */
+/* ######################################## */
+/* ######################################## */
+
+/* #14: PDO Refactoring */
+
+class Db
+{
+	// New keyword here -> static
+    public static function connect()
+    {
+        // This means that we can use this method globally without requiring an instance!
+    }
+}
+
+/* Then, we don't need to do things such as: */
+
+/* $db = new Db();
+	$db->connect();
+ */
+
+/* Instead of this we can do
+	Db::connect();
+*/
+
+/* Static methods are useful when you don't need to create an instance. */
+
+/* Without namespaces, we can require Class file from another location and freerly use their methods. */
+
+/* Remember about function array_map() to list out interesting things. */
+
+/* ######################################## */
+/* ######################################## */
+/* ######################################## */
+
+/* #15: Hide Your Secret Passwords https://laracasts.com/series/php-for-beginners/episodes/15 */
